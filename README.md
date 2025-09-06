@@ -16,8 +16,17 @@ It was originally built as coursework for NWEN241 but is packaged here as a demo
 - **server.c** → single-client version.
 - **server2.c** → enhanced version that uses `fork()` to handle multiple clients.
 
-## Build
-Compile with `gcc`:
+## Build and Run
+
 ```bash
 gcc -Wall -Wextra -o server server.c
 gcc -Wall -Wextra -o server2 server2.c
+
+# Start the server on a port (must be ≥ 1024), for example:
+./server 12345
+
+# Or run the multi-client version:
+./server2 12345
+
+# In another terminal, connect with netcat:
+nc localhost 12345
